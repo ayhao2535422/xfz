@@ -1,0 +1,174 @@
+@import "../common/init";
+@import "../common/constants";
+@import "../common/header";
+@import "../common/footer";
+@import "../common/body";
+@import "../common/course_nav";
+
+
+.main{
+  .body_container{
+    width: 1070px;
+    .top_course_wrapper{
+      background: #ffffff;
+      margin-top: 20px;
+      .course_info{
+        padding: 20px;
+        .line1{
+          color: #3a3a3a;
+          font-size: 20px;
+        }
+        .line2{
+          overflow: hidden;
+          margin-top: 20px;
+          font-size: 14px;
+          .share_group{
+            overflow: hidden;
+            line-height: 40px;
+            .title{
+              color: #878787;
+            }
+            float: left;
+            a{
+              img{
+                width: 18px;
+                height: 18px;
+                margin-left: 3px;
+              }
+            }
+          }
+          .price_group{
+            float: right;
+            .price{
+              font-size: 16px;
+            }
+            .free{
+              color: lightgreen;
+              display: inline-block;
+              line-height: 40px;
+            }
+            .pay{
+              color: orangered;
+            }
+            .buy_btn{
+              color: white;
+              background: orange;
+              display: inline-block;
+              height: 40px;
+              width: 120px;
+              text-align: center;
+              line-height: 40px;
+              border-radius: 5px;
+              margin-left: 20px;
+            }
+          }
+        }
+      }
+
+      .video_group{
+        width: 100%;
+        height: 600px;
+        background: pink;
+      }
+    }
+
+    .bottom_course_wrapper{
+      margin-top: 20px;
+      overflow: hidden;
+      .left_detail_wrapper{
+        float: left;
+        width: 700px;
+        .item_group{
+          background: #ffffff;
+          padding: 20px;
+          .item_title{
+            margin-bottom: 20px;
+            color: #878787;
+            font-size: 18px;
+            border-left: 5px solid #5c87d9;
+            padding-left: 16px;
+          }
+          .teacher_group{
+            overflow: hidden;
+            .avatar_group{
+              float: left;
+              width: 60px;
+              height: 60px;
+              img{
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+              }
+            }
+            .author_info{
+              float: left;
+              margin-left: 10px;
+              font-size: 14px;
+              .author_name{
+                color: #878787;
+              }
+              .author_job{
+                color: #878787;
+                margin-top: 14px;
+              }
+            }
+          }
+          .content{
+            margin-top: 20px;
+            color: #696969;
+            font-size: 14px;
+            line-height: 2;
+          }
+        }
+      }
+
+      .right_wrapper{
+        width: 355px;
+        float: right;
+        background: #ffffff;
+        padding: 20px;
+        box-sizing: border-box;
+        .right_wrapper_title{
+          margin-bottom: 20px;
+          font-size: 18px;
+        }
+        .content_ul{
+          .content_li{
+            overflow: hidden;
+            padding: 10px 0;
+            border-bottom: 1px solid #eeeeee;
+            height: 90px;
+            a{
+            .left_div{
+              float: left;
+              width: 150px;
+              height: 90px;
+              position: relative;
+            .title{
+              color: #696969;
+              font-size: 16px;
+            }
+            .author{
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              color: #878787;
+              font-size: 14px;
+            }
+          }
+            .right_div{
+            float: right;
+            width: 150px;
+            img{
+              width: 160px;
+              height: 90px;
+            }
+          }
+            }
+          }
+        }
+      }
+    }
+  }
+}

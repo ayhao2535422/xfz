@@ -1,0 +1,177 @@
+@import "../common/constants";
+
+body{
+  background: #f2f2f2;
+}
+
+.main {
+  width: 100%;
+  background: #f2f2f2;
+  margin-top: 84px;
+
+  .body_container {
+    width: $page_width;
+    margin: 0 auto;
+    overflow: hidden;
+
+    .news_container{
+      width: $banner_width;
+      float: left;
+    }
+
+    .side_container {
+    width: $side_width;
+    float: right;
+    background: #ffffff;
+    //overflow: hidden;
+
+    .title {
+      padding: 20px;
+      overflow: hidden;
+
+      .ketang {
+        float: left;
+      }
+
+      .more {
+        float: right;
+        font-size: 14px;
+
+        a {
+          color: $theme_color;
+        }
+      }
+    }
+
+    .img {
+      width: $side_width;
+      height: 130px;
+
+      img {
+        width: $side_width;
+        height: 130px;
+      }
+    }
+
+    .guanzhu_p {
+      padding: 20px;
+    }
+
+    .guanzhu_div {
+      overflow: hidden;
+      .left {
+        float: left;
+
+        .zhihu {
+          img {
+            width: 90px;
+            height: 60px;
+          }
+        }
+
+        .weibo {
+          img {
+            width: 90px;
+            height: 65px;
+          }
+        }
+
+        .toutiao {
+          img {
+            width: 90px;
+            height: 60px;
+          }
+        }
+      }
+
+      .middle {
+        float: left;
+
+        p {
+          margin: 15px 0 50px 0;
+          font-size: 14px;
+          color: #878787;
+        }
+      }
+
+      .right {
+        float: right;
+        padding: 20px;
+        margin-right: 10px;
+
+        .img {
+          width: 90px;
+          height: 100px;
+
+          img {
+            width: 90px;
+            height: 90PX;
+          }
+        }
+
+        p{
+          width: 90px;
+          font-size: 12px;
+          color: #212121;
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .hot_div{
+      padding: 0 20px 0 20px;
+      font-size: 18px;
+    }
+
+    .content_ul{
+      li{
+        padding: 20px;
+        overflow: hidden;
+        .left{
+          float: left;
+          width: 205px;
+          height: 70px;
+          position: relative;
+          p{
+            font-size: 16px;
+            a{
+              color: #212121;
+              &:hover{
+                color: #5c87d9;
+              }
+            }
+          }
+
+          .bottom{
+            position: absolute;
+            bottom: 0;
+            width: 205px;
+            overflow: hidden;
+            .category{
+              font-size: 14px;
+              color: #5c87d9;
+              float: left;
+            }
+            .time{
+              font-size: 14px;
+              float: right;
+            }
+          }
+        }
+
+        .right{
+          float: right;
+          height: 70px;
+          width: 100px;
+          a{
+            img{
+              width: 100px;
+              height: 70px;
+            }
+          }
+        }
+      }
+    }
+  }
+  }
+}

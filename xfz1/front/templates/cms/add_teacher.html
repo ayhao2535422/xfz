@@ -1,0 +1,52 @@
+{% extends 'cms/base.html' %}
+
+{% block title %}
+    添加讲师
+{% endblock %}
+
+{% block head %}
+    <script src="{% static 'ueditor/ueditor.config.js' %}"></script>
+    <script src="{% static 'ueditor/ueditor.all.min.js' %}"></script>
+    <script src="{% static 'js/add_teacher.min.js' %}"></script>
+{% endblock %}
+
+{% block content-header %}
+    <h1>添加讲师</h1>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+<div class="col-md-12">
+    <div class="box box-primary">
+        <div class="box-body">
+            <div class="form-group">
+                <label for="username-form">讲师姓名：</label>
+                <input id="username-form" type="text" class="form-control" name="username">
+            </div>
+            <div class="form-group">
+                <label for="jobtitle-form">讲师履历：</label>
+                <input type="text" id="jobtitle-form" class="form-control" name="jobtitle">
+            </div>
+            <div class="form-group">
+                <label for="avatar-form">头像：</label>
+                <div class="input-group">
+                    <input type="text" id="avatar-form" class="form-control" name="avatar">
+                    <span class="input-group-btn">
+                        <label class="btn btn-primary btn-file">上传图片
+                            <input type="file" id="avatar-btn" name="file">
+                        </label>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="profile-form">简介：</label>
+                <script id="editor" type="text/plain"></script>
+            </div>
+        </div>
+        <div class="box-footer">
+            <button class="btn btn-primary pull-right submit-btn">发布</button>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

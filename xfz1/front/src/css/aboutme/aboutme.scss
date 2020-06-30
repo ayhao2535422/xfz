@@ -1,0 +1,68 @@
+@import "../common/init";
+@import "../common/constants";
+@import "../common/header";
+@import "../common/body";
+@import "../common/footer";
+
+body{
+  background: #f2f2f2;
+}
+
+.main {
+  width: 100%;
+  background: #f2f2f2;
+  margin-top: 84px;
+
+  .body_container {
+    width: $page_width;
+    margin: 0 auto;
+    overflow: hidden;
+
+    .news_container {
+      width: $banner_width;
+      float: left;
+
+      .top_thumbnail{
+        width: $banner_width;
+        height: $banner_height;
+        background: url("https://img.hacpai.com/bing/20190402.jpg?imageView2/1/w/1280/h/720/interlace/1/q/100") no-repeat;
+        background-size: cover;
+        background-position: 50%;
+      }
+      .me{
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
+      .aboutme{
+        padding: 30px;
+        background: #fff;
+        display: flex;
+        .left-side{
+          width: 200px;
+          h2{
+            margin-bottom: 14px;
+            margin-top: 30px;
+            color: #738a94;
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 8px;
+          }
+          ul{
+            padding-left: 20px;
+            color: #738a94;
+            li{
+              line-height: 30px;
+              list-style:disc
+            }
+          }
+          p{
+            color: #738a94;
+            line-height: 25px;
+          }
+        }
+        .right-side{
+        }
+      }
+    }
+  }
+}

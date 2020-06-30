@@ -1,0 +1,40 @@
+
+{% extends 'base/front_base.html' %}
+
+{% block title %}
+  关于我
+{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/aboutme/aboutme.min.css' %}">
+{% endblock %}
+
+{% block main %}
+  <div class="main">
+    <div class="body_container">
+      <div class="news_container">
+        <div class="top_thumbnail">
+          <a href="#"></a>
+        </div>
+        <h1 class="me">关于我</h1>
+        <div class="aboutme">
+          <div class="left-side">
+            <h2>基本信息</h2>
+            <ul>
+              <li>杜浩(Duhao)/男/汉/1991</li>
+              <li>本科/动漫设计/河南科技大学</li>
+              <li>邮箱：913833618@qq.com</li>
+              <li>擅长的技能： 1.前端方向:熟悉H5,C3,JS,Jquery,Vue等.  2.后端方向:python/Django,</li>
+            </ul>
+            <p></p>
+            <h2>相关作品</h2>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小饭桌项目，带admin后台。前端方面主要用 到了H5 C3 Ajax Jquery Adminlte等，后端方面是python+Django开发</p>
+          </div>
+          <div class="right-side">
+          </div>
+        </div>
+      </div>
+      {% include 'common/sidebar.html' %}
+        </div>
+    </div>
+{% endblock %}

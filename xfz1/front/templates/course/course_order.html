@@ -1,0 +1,50 @@
+{% extends 'base/front_base.html' %}
+
+{% block title %}
+    订单
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/course/course_order.min.css' %}">
+    <script src="{% static 'js/course_order.min.js' %}"></script>
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="left-group">
+            <div class="thumbnail">
+                <a href="">
+                    <img src="{{ course.cover_url }}" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="right-group">
+            <div class="top-tags">
+                <p><span>商品名称</span></p>
+                <p><span>单价(元)</span></p>
+                <p><span>小计(元)</span></p>
+            </div>
+            <div class="bottom-info">
+                <p><span class="name">{{ course.title }}</span></p>
+                <p><span class="price">{{ course.price }}</span></p>
+                <p><span class="total">{{ course.price }}</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="pay-method">
+        <div class="pay">
+            <label for="weixin">
+                <input id="weixin" name="pay" type="radio">
+                <span class="weixin-btn">
+            </span>
+            </label>
+            <label for="zhifubao">
+                <input id="zhifubao" name="pay" type="radio">
+                <span class="zhifubao-btn"></span>
+            </label>
+        </div>
+    </div>
+    <div class="submit-group">
+        <input type="submit" value="去支付" class="submit-btn">
+    </div>
+{% endblock %}

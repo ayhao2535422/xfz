@@ -1,0 +1,49 @@
+{% load my_filter %}
+<div class="side_container">
+            <div class="title">
+                <span class="ketang">在线课堂</span>
+                <span class="more"><a href="{% url 'course:course_index' %}">更多</a></span>
+            </div>
+            <div class="img">
+                <a href="/course/{{ course.pk }}"><img src="{{ course.cover_url }}" alt=""></a>
+            </div>
+            <div class="guanzhu_p">
+                <p>关注小饭桌</p>
+            </div>
+            <div class="guanzhu_div">
+                <div class="left">
+                    <div class="zhihu"><img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1591519497&di=32a4454be4fa925234e373fdf15e0b40&src=http://statics.ygxz.com/d/file/12418560_0_thumb.jpg" alt=""></div>
+                    <div class="weibo"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1585318766952&di=ad4b7899362f4dd532db87aba7280ba4&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fexp%2Fw%3D500%2Fsign%3Db5279543b33533faf5b6932e98d2fdca%2F0ff41bd5ad6eddc4fd25a8b63bdbb6fd536633b8.jpg" alt=""></div>
+                    <div class="toutiao"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1585318792242&di=a2f1a7905e8e5285f286947171b4ccec&imgtype=0&src=http%3A%2F%2Fstc.zjol.com.cn%2Fg1%2FM00074CCggSA1lCL2GALLTOAAAz2Amp5w8222.jpg%3Fwidth%3D640%26height%3D555" alt=""></div>
+                </div>
+                <div class="middle">
+                    <p>小饭桌创业课堂</p>
+                    <p>小饭桌创业课堂</p>
+                    <p class="toutiao_p">小饭桌</p>
+                </div>
+                <div class="right">
+                    <div class="img">
+                        <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3272783089,3454357412&fm=26&gp=0.jpg" alt="">
+                    </div>
+                    <p>扫描二维码关注小饭桌微信公众号</p>
+                </div>
+            </div>
+            <div class="hot_div"><p>热门推荐</p></div>
+            <ul class="content_ul">
+                {% for hotNews in hotNewses %}
+                    <li>
+                        <div class="left">
+                            <p><a href="{% url 'news:news_detail' hotNews.pk %}">{{ hotNews.title }}</a></p>
+                            <div class="bottom">
+                                <span class="category">{{ hotNews.caegory.name }}</span>
+                                <span class="time">{{ hotNews.pub_time|time_since }}</span>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <a href="{% url 'news:news_detail' hotNews.pk %}"><img src="{{ hotNews.thumbnail }}" alt=""></a>
+                        </div>
+                    </li>
+                {% endfor %}
+
+            </ul>
+        </div>

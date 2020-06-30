@@ -1,0 +1,141 @@
+@import "../common/init";
+@import "../common/constants";
+@import "../common/header";
+@import "../common/body";
+@import "../common/footer";
+
+.main{
+  .body_container{
+    overflow: hidden;
+    .news_container{
+      background: #ffffff;
+      padding: 20px;
+      box-sizing: border-box;
+      .news_title{
+        .title{
+          color: #212121;
+          font-size: 24px;
+          font-weight: 400;
+        }
+        .news_info{
+          margin-top: 20px;
+          overflow: hidden;
+          color: #878787;
+          font-size: 14px;
+          line-height: 21px;
+          .category{
+            float: left;
+            span{
+              margin-right: 20px;
+            }
+            .hot{
+              background: #5c87d9;
+              color: white;
+              padding: 0 3px 0 3px;
+              border-radius: 2px;
+            }
+          }
+          .share{
+            float: right;
+            overflow: hidden;
+            span{
+              float: left;
+            }
+            .weixin{
+              float: left;
+              width: 28px;
+              height: 28px;
+              background: url("http://i1.hdslb.com/bfs/archive/ca4e2aaffff23a7d2738fe7459b9f63267c32a4b.jpg")no-repeat;
+              background-size: 125%;
+            }
+            .weibo{
+              float: left;
+              width: 28px;
+              height: 28px;
+              background: url("http://img4.imgtn.bdimg.com/it/u=1762755322,1862428578&fm=26&gp=0.jpg")no-repeat;
+              background-size: 132%;
+              background-position: 0 -7px;
+              margin-left: 10px;
+            }
+          }
+        }
+
+        .article{
+          margin-top: 20px;
+        }
+      }
+
+      .comment_wrapper{
+        border-top: 1px solid #c9c9c9;
+        padding-top: 20px;
+        margin-top: 50px;
+        .title{
+          color: #212121;
+          font-size: 18px;
+          font-weight: 400;
+        }
+
+        .comment-textarea{
+          margin-top: 10px;
+          width: 100%;
+          resize: none;
+          outline: none;
+          border: 1px solid #cccccc;
+          border-radius: 5px;
+          font-size: 14px;
+          padding: 6px 10px;
+          box-sizing: border-box;
+        }
+
+        .submit_group{
+          margin-top: 10px;
+          overflow: hidden;
+          text-align: right;
+          .submit_btn{
+            padding: 7px 11px;
+            background: #5c87d9;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+        }
+
+        .comment_list{
+          margin-top: 20px;
+          li{
+            border-bottom: 1px solid #c9c9c9;
+            padding-bottom: 20px;
+            margin-top: 20px;
+            .line1{
+              overflow: hidden;
+              line-height: 40px;
+
+              color: #878787;
+              height: 40px;
+              .avatar{
+                float: left;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+              }
+              .author{
+                float: left;
+                margin-left: 20px;
+                font-size: 16px;
+              }
+              .time{
+                float: right;
+                font-size: 16px;
+              }
+            }
+            .line2{
+              margin-left: 60px;
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

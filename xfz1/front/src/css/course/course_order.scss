@@ -1,0 +1,105 @@
+@import "../common/init";
+@import "../common/constants";
+@import "../common/header";
+@import "../common/footer";
+
+.container{
+  background: #f2f2f2;
+  width: 1170px;
+  height: 160px;
+  margin: 0 auto;
+  margin-top: 80px;
+  .left-group{
+    width: 240px;
+    height: 100%;
+    float: left;
+    .thumbnail{
+      width: 100%;
+      height: 100%;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .right-group{
+    width: 930px;
+    height: 100%;
+    float: right;
+    .top-tags{
+      width: 100%;
+      height: 80px;
+      text-align: center;
+      p{
+        float: left;
+        height: 80px;
+        width: 300px;
+        margin-top: 25px;
+        font-weight: bold;
+      }
+    }
+    .bottom-info{
+      width: 100%;
+      height: 80px;
+      p{
+        float: left;
+        height: 80px;
+        text-align: center;
+        width: 300px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.pay-method{
+  width: 1170px;
+  height: 60px;
+  margin: 15px auto;
+  .pay{
+    float: right;
+    .weixin-btn{
+      cursor: pointer;
+      display: inline-block;
+      border: 1px solid #F2F2F2;
+      margin-top: 10px;
+      width: 125px;
+      height: 35px;
+      background: url("http://nos.netease.com/test-edu-image/1BD9F69D6760CE1508D2269864AA54F8.png") no-repeat;
+      background-position: 15px 6px;
+      background-size: 85px 22px;
+    }
+    .zhifubao-btn{
+      cursor: pointer;
+      display: inline-block;
+      border: 1px solid #F2F2F2;
+      margin-top: 10px;
+      width: 125px;
+      height: 35px;
+      background: url("http://study.163.com/res/images/pay/payList.png");
+      background-position: -140px 0;
+      background-size: 300% 200%;
+    }
+  }
+}
+
+.submit-group{
+  width: 1170px;
+  height: 40px;
+  margin: 0 auto;
+  .submit-btn{
+    float: right;
+    width: 120px;
+    height: 40px;
+    outline: none;
+    border: none;
+    color: white;
+    background: orange;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+  }
+}

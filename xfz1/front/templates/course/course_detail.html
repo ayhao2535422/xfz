@@ -1,0 +1,115 @@
+{% extends 'base/front_base.html' %}
+
+{% block title %}
+    课程详情
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/course/course_detail.min.css' %}">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1692391_xlcsapneh3o.css">
+    <script src="{% static 'videojs/video.min.js' %}"></script>
+    <script src="{% static 'videojs/videojs-contrib-hls.min.js' %}"></script>
+    <script src="{% static 'videojs/videojs-contrib-quality-levels.min.js' %}"></script>
+    <script type="text/javascript" src="https://cdn.bdstatic.com/jwplayer/latest/cyberplayer.js"></script>
+    <script src="{% static 'js/course_detail.min.js' %}"></script>
+{% endblock %}
+
+{% block main %}
+    <div class="main">
+        <div class="course_nav">
+            <div class="nav_container">
+                <h3 class="title">在线课堂</h3>
+            </div>
+        </div>
+        <div class="body_container">
+            <div class="top_course_wrapper">
+                <div class="course_info">
+                    <p class="line1">{{ course.title }}</p>
+                    <div class="line2">
+                        <div class="share_group">
+                            <span class="title">分享至:</span>
+                            <a href="#"><img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3396608600,336221395&fm=26&gp=0.jpg" alt="" class="weixin"></a>
+                            <a href="#"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1585710146219&di=e4370d117bbf89d2d1330be8368721a4&imgtype=0&src=http%3A%2F%2Fwww.aihami.com%2Fuploads%2Fallimg%2F180214%2F168-1P214105210521.jpg" alt="" class="weibo"></a>
+                        </div>
+                        <div class="price_group">
+                            <!--<span class="price pay">￥49元</span>
+                            <a href="#" class="buy_btn">立即购买</a>-->
+                            {% if course.price > 0 %}
+                                <span class="pay">￥{{ course.price }}</span>
+                                <a href="{% url 'course:course_order' course_id=course.pk %}" class="buy_btn">立即购买</a>
+                            {% else %}
+                                <span class="free">免费</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="video_group">
+                    <span id="video-info" hidden data-video-url="{{ course.video_url }}" data-cover-url="{{ course.cover_url }}"></span>
+                    <div id="playercontainer"></div>
+                </div>
+            </div>
+            <div class="bottom_course_wrapper">
+                <div class="left_detail_wrapper">
+                    <div class="item_group">
+                        <p class="item_title">课程讲师</p>
+                        <div class="teacher_group">
+                            <div class="avatar_group">
+                                <img src="{{ course.teacher.avatar }}" alt="">
+                            </div>
+                            <div class="author_info">
+                                <p class="author_name">{{ course.teacher.username }}</p>
+                                <p class="author_job">{{ course.teacher.jobtitle }}</p>
+                            </div>
+                        </div>
+                        <p class="content">{{ course.teacher.profile|safe }}</p>
+                    </div>
+                    <div class="item_group">
+                        <p class="item_title">{{ course.profile|safe }}</p>
+{#                        <p class="content">半导体中的电子状态。本章主要介绍了半导体的几种常见晶体结构，半导体中能带的形成，半导体中电子的状态和能带特点，在讲解半导体中电子的运动时，引入了有效质量的概念。阐述本征半导体的导电机构，引入了空穴散射的概念。最后，介绍了Si、Ge和GaAs的能带结构。#}
+{##}
+{#半导体中杂质和缺陷能级。本章主要讲解施主能级和受主能级的形成，及浅杂质能级的类氢原子模型的计算过程；本证激发和非本征激发；n型和p型半导体。典型化合物半导体的杂质能级；深能级杂质以及和浅能级杂质的区别。</p>#}
+{#                    </div>#}
+{#                    <div class="item_group">#}
+{#                        <p class="item_title">课程大纲</p>#}
+{#                        <p class="content">先修课程：热力学与统计物理学，量子理学，固体物理#}
+{##}
+{#建议教材：《半导体物理学》，电子工业出版社出版（第七版），刘恩科等编著。#}
+{##}
+{#参考资料：（书籍、文献、网站信息等）</p>#}
+{#                    </div>#}
+{#                    <div class="item_group">#}
+{#                        <p class="item_title">适宜人群</p>#}
+{#                        <p class="content">20-30岁学过js的同学</p>#}
+                    </div>
+                </div>
+                <div class="right_wrapper">
+                    <p class="right_wrapper_title">推荐课程</p>
+                    <ul class="content_ul">
+                        <li class="content_li">
+                            <a href="#">
+                                <div class="left_div">
+                                <p class="title">教你制作抓住投资人眼球的商业计划书</p>
+                                <p class="author">投资狂人</p>
+                            </div>
+                                <div class="right_div">
+                                <img src="https://static-image.xfz.cn/1563171621_723.png-course.list.small" alt="">
+                            </div>
+                            </a>
+                        </li>
+                        <li class="content_li">
+                            <a href="#">
+                                <div class="left_div">
+                                <p class="title">教你制作抓住投资人眼球的商业计划书</p>
+                                <p class="author">投资狂人</p>
+                            </div>
+                                <div class="right_div">
+                                <img src="https://static-image.xfz.cn/1563171621_723.png-course.list.small" alt="">
+                            </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

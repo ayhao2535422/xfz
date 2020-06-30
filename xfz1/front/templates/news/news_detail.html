@@ -1,0 +1,73 @@
+{% extends 'base/front_base.html' %}
+{% load my_filter %}
+
+{% block title %}
+    新闻详情-小饭桌
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/news/news_detail.min.css' %}">
+    <script src="{% static 'arttemplate/template-web.js' %}"></script>
+    <script src="{% static 'js/news_detail.min.js' %}"></script>
+    <script id="comment_item" type="text/html">
+        {% verbatim %}
+        <li>
+            <div class="line1">
+                <img src="http://b-ssl.duitang.com/uploads/item/201704/10/20170410095843_SEvMy.thumb.700_0.jpeg" alt=""
+                     class="avatar">
+                <span class="author">{{ comment.author.username }}</span>
+                <span class="time">{{ comment.pub_time|timeSince }}</span>
+            </div>
+            <div class="line2">{{ comment.content }}</div>
+        </li>
+        {% endverbatim %}
+    </script>
+{% endblock %}
+
+{% block main %}
+    <div class="main">
+        <div class="body_container">
+            <div class="news_container">
+                <div class="news_title">
+                    <h1 class="title">{{ news.title }}</h1>
+                    <div class="news_info">
+                        <div class="category">
+                            <span class="author">{{ news.author.username }}</span>
+                            <span class="pub_time">{{ news.pub_time|time_since }}</span>
+                            <span class="hot">{{ news.category.name }}</span>
+                        </div>
+                        <div class="share">
+                            <span>分享至：</span>
+                            <a class="weixin"></a>
+                            <a href="#" class="weibo"></a>
+                        </div>
+                    </div>
+                    <article class="article">
+                        {{ news.content|safe }}
+                    </article>
+                </div>
+                <div class="comment_wrapper">
+                    <h3 class="title">文章评论（{{ news.comments.count }}）</h3>
+                    <textarea name="comment" class="comment-textarea" placeholder="立即登录，参与评论"></textarea>
+                    <div class="submit_group">
+                        <button class="submit_btn" data-news_id="{{ news.pk }}">立即评论</button>
+                    </div>
+                    <ul class="comment_list">
+                        {% for comment in news.comments.all %}
+                            <li>
+                                <div class="line1">
+                                    <img src="http://b-ssl.duitang.com/uploads/item/201704/10/20170410095843_SEvMy.thumb.700_0.jpeg"
+                                         alt="" class="avatar">
+                                    <span class="author">{{ comment.author.username }}</span>
+                                    <span class="time">{{ comment.pub_time|time_since }}</span>
+                                </div>
+                                <div class="line2">{{ comment.content }}</div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% include 'common/sidebar.html' %}
+    </div>
+    </div>
+{% endblock %}

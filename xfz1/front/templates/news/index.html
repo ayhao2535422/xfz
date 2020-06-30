@@ -1,0 +1,87 @@
+{% extends 'base/front_base.html' %}
+{% load my_filter %}
+
+{% block title %}
+    小饭桌
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/news/index.min.css' %}">
+    <script src="{% static 'arttemplate/template-web.js' %}"></script>
+    <script src="{% static 'js/index.min.js' %}"></script>
+    <script id="news_item" type="text/html">
+        {% verbatim %}
+        {{ each newses news index }}
+        <li>
+            <div class="detail_img">
+                <a href="/news/{{ news.id }}/"><img src="{{ news.thumbnail }}" alt=""></a>
+            </div>
+            <div class="detail_content">
+                <p class="title_p"><a href="/news/{{ news.id }}/">{{ news.title }}</a></p>
+                <p class="content_p">{{ news.desc }}</p>
+                <p class="more_p">
+                    <span class="category">{{ news.category.name }}</span>
+                    <span class="time">{{ news.pub_time|timeSince }}</span>
+                    <span class="author">{{ news.author.username }}</span>
+                </p>
+            </div>
+        </li>
+        {{ /each }}
+        {% endverbatim %}
+    </script>
+{% endblock %}
+
+
+{% block main %}
+    <div class="main">
+        <div class="body_container">
+            <div class="news_container">
+                <div class="banner_group">
+                    <ul class="banner_ul">
+                        {% for banner in banners %}
+                            <li>
+                                <a href="{{ banner.link_to }}"><img src="{{ banner.image_url }}" alt=""></a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <span class="arrow left_arrow">‹</span>
+                    <span class="arrow right_arrow">›</span>
+                    <div class="page_control_group">
+                        <ul class="page_control">
+                        </ul>
+                    </div>
+                </div>
+                <div class="outer_news_box">
+                    <ul class="tab_box">
+                        <li data-category="0" class="active"><a href="javascript:void (0)">最新资讯</a></li>
+                        {% for category in categories %}
+                            <li data-category="{{ category.pk }}"><a href="javascript:void (0)">{{ category.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    <ul class="inner_news_box">
+                        {% for news in newses %}
+                            <li>
+                                <div class="detail_img">
+                                    <a href="{% url 'news:news_detail' news_id=news.pk %}"><img src="{{ news.thumbnail }}" alt=""></a>
+                                </div>
+                                <div class="detail_content">
+                                    <p class="title_p"><a href="{% url 'news:news_detail' news_id=news.pk %}">{{ news.title }}</a></p>
+                                    <p class="content_p">{{ news.desc }}</p>
+                                    <p class="more_p">
+                                        <span class="category">{{ news.category.name }}</span>
+                                        <span class="time">{{ news.pub_time|time_since }}</span>
+                                        <span class="author">{{ news.author.username }}</span>
+                                    </p>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="load_more_group">
+                        <button class="load_more" id="load_more_btn">查看更多</button>
+                    </div>
+                </div>
+            </div>
+            {% include 'common/sidebar.html' %}
+    </div>
+    </div>
+{% endblock %}

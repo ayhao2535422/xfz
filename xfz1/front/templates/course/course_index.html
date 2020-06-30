@@ -1,0 +1,76 @@
+{% extends 'base/front_base.html' %}
+
+{% block title %}
+    课程
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/course/course_index.min.css' %}">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1692391_xlcsapneh3o.css">
+    <script src="{% static 'arttemplate/template-web.js' %}"></script>
+    <script src="{% static 'js/course.min.js' %}"></script>
+    <script id="course-item" type="text/html">
+        {% verbatim %}
+        {{ each courses course index }}
+        <li>
+            <a href="/course/{{ course.pk }}">
+                <div class="thumbnail_group">
+                    <img src="{{ course.cover_url }}" alt="">
+                </div>
+                <div class="course_info">
+                    <p class="title">{{ course.title }}</p>
+                    <p class="author">{{ course.teacher.username }}</p>
+                    <p class="price_group">
+                        {{ if course.price > 0 }}
+                        <span class="pay">￥{{ course.price }}</span>
+                        {{ else }}
+                        <span class="free">免费</span>
+                        {{ /if }}
+                    </p>
+                </div>
+            </a>
+        </li>
+        {{ /each }}
+        {% endverbatim %}
+    </script>
+{% endblock %}
+
+{% block main %}
+    <div class="main">
+        <div class="course_nav">
+            <div class="nav_container">
+                <h3 class="title">在线课堂</h3>
+                <ul class="nav_ul">
+                    {% for category in categories %}
+                        <li data-pk="{{ category.pk }}"><a href="#">{{ category.name }}</a></li>
+                    {% endfor %}
+
+                </ul>
+            </div>
+        </div>
+        <div class="body_container">
+            <ul class="course_ul">
+                {% for course in courses %}
+                    <li>
+                        <a href="{% url 'course:course_detail' course_id=course.pk %}">
+                            <div class="thumbnail_group">
+                                <img src="{{ course.cover_url }}" alt="">
+                            </div>
+                            <div class="course_info">
+                                <p class="title">{{ course.title }}</p>
+                                <p class="author">{{ course.teacher.username }}</p>
+                                <p class="price_group">
+                                    {% if course.price > 0 %}
+                                        <span class="pay">￥{{ course.price }}</span>
+                                    {% else %}
+                                        <span class="free">免费</span>
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

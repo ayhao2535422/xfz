@@ -1,0 +1,53 @@
+{% extends 'base/front_base.html' %}
+{% load my_filter %}
+{% block title %}
+    搜索
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/search/search.min.css' %}">
+{% endblock %}
+
+{% block main %}
+    <div class="main">
+        <div class="body_container">
+            <div class="news_container">
+                <div class="outer_news_box">
+                    <div class="search_box">
+                        <form action="">
+                            <div class="left_box">
+                                <input name="q" type="text" class="search_input">
+                            </div>
+                            <input value="搜索" type="submit" class="right_box">
+                        </form>
+                    </div>
+                    <ul class="tab_box">
+                        <li class="active"><a href="#">最新资讯</a></li>
+                    </ul>
+                    <ul class="inner_news_box">
+                        {% for news in newses %}
+                            <li>
+                                <div class="detail_img">
+                                    <a href="{% url 'news:news_detail' news_id=news.pk %}"><img
+                                            src="{{ news.thumbnail }}"
+                                            alt=""></a>
+                                </div>
+                                <div class="detail_content">
+                                    <p class="title_p"><a href="{% url 'news:news_detail' news.pk %}">{{ news.title }}</a></p>
+                                    <p class="content_p">{{ news.desc }}</p>
+                                    <p class="more_p">
+                                        <span class="category">{{ news.category.name }}</span>
+                                        <span class="time">{{ news.pub_time|time_since }}</span>
+                                        <span class="author">{{ news.author.username }}</span>
+                                    </p>
+                                </div>
+                            </li>
+                        {% endfor %}
+
+                    </ul>
+                </div>
+            </div>
+            {% include 'common/sidebar.html' %}
+        </div>
+    </div>
+{% endblock %}

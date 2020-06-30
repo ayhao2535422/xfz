@@ -1,0 +1,226 @@
+@import "constants";
+@import "init";
+
+.mask_box{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: rgba(0,0,0,0.3);
+  overflow-y: scroll;
+  display: none;
+  z-index: 100;
+  .auth_box{
+    background: #ffffff;
+    width: 400px;
+    margin: 40px auto;
+    .top_box{
+      width: 100%;
+      height: 40px;
+      background: white;
+      .close_btn{
+        display: inline-block;
+        float: right;
+        margin-top: 10px;
+        margin-right: 10px;
+        cursor: pointer;
+        color: #878787;
+        font-size: 20px;
+      }
+    }
+    .bottom_auth_container{
+      width: 100%;
+      height: $auth_height;
+      position: relative;
+      overflow: hidden;
+      .auth-2_div{
+        width: $auth_width*2;
+        height: $auth_height;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: white;
+        .signin_div{
+          float: left;
+          width: 400px;
+          height: $auth_height;
+          box-sizing: border-box;
+          padding: 20px;
+          .top_title{
+            overflow: hidden;
+            border-bottom: 1px solid #f2f2f2;
+            padding-bottom: 10px;
+            .left_span{
+              float: left;
+              color: #878787;
+              border-bottom: 3px solid #5c87d9;
+            }
+            .right_span{
+              float: right;
+              color: #5c87d9;
+              cursor: pointer;
+            }
+          }
+          .middle_form{
+            margin-top: 20px;
+            .telephone_box{
+              margin-bottom: 20px;
+              .telephone{
+                border: 1px solid #cccccc;
+                outline: none;
+                padding: 10px;
+                width: 100%;
+                box-sizing: border-box;
+              }
+            }
+            .password_box{
+              margin-bottom: 20px;
+              .password{
+                border: 1px solid #cccccc;
+                outline: none;
+                padding: 10px;
+                width: 100%;
+                box-sizing: border-box;
+              }
+            }
+            .remember_box{
+              margin-bottom: 20px;
+              }
+            }
+          .bottom_submit{
+            .submit{
+              width: 100%;
+              background: #5c87d9;
+              border: none;
+              color: white;
+              height: 30px;
+              cursor: pointer;
+              outline: none;
+            }
+          }
+        }
+        .signup_div{
+          float: right;
+          width: 400px;
+          height: $auth_height;
+          box-sizing: border-box;
+          padding: 20px;
+          .top_title1{
+            overflow: hidden;
+            border-bottom: 1px solid #f2f2f2;
+            padding-bottom: 10px;
+            .left_span1{
+              float: left;
+              color: #878787;
+              border-bottom: 3px solid #5c87d9;
+            }
+            .right_span1{
+              float: right;
+              color: #5c87d9;
+              cursor: pointer;
+            }
+          }
+          .middle_form_signup{
+            margin-top: 20px;
+            .telephone_box{
+              margin-bottom: 19px;
+              .telephone{
+                padding: 10px;
+                width: 100%;
+                box-sizing: border-box;
+                outline: none;
+                border: 1px solid #cccccc;
+              }
+            }
+            .username_box{
+              margin-bottom: 19px;
+              .username{
+                padding: 10px;
+                width: 100%;
+                box-sizing: border-box;
+                outline: none;
+                border: 1px solid #cccccc;
+              }
+            }
+            .code_box{
+              margin-bottom: 19px;
+              .code{
+                padding: 10px;
+                width: 240px;
+                box-sizing: border-box;
+                outline: none;
+                border: 1px solid #cccccc;
+              }
+              .img_captcha{
+                width: 100px;
+                height: 40px;
+                background: yellow;
+                float: right;
+                cursor: pointer;
+              }
+            }
+            .password_box{
+              margin-bottom: 19px;
+              .password{
+                padding: 10px;
+                width: 100%;
+                box-sizing: border-box;
+                outline: none;
+                border: 1px solid #cccccc;
+              }
+            }
+            .password1_box{
+              margin-bottom: 19px;
+              .password1{
+                padding: 10px;
+                width: 100%;
+                box-sizing: border-box;
+                outline: none;
+                border: 1px solid #cccccc;
+              }
+            }
+            .message_code_box{
+              margin-bottom: 19px;
+              overflow: hidden;
+              .message_code{
+                padding: 10px;
+                width: 260px;
+                box-sizing:border-box;
+                outline: none;
+                border: 1px solid #cccccc;
+              }
+              .send_captcha{
+                border: 1px solid #5c87d9;
+                display: inline-block;
+                width: 90px;
+                height: 38px;
+                color: #5c87d9;
+                background: white;
+                padding: 10px 10px;
+                float: right;
+                outline: none;
+                cursor: pointer;
+              }
+              .disabled{
+                color: #cccccc;
+                border-color: #cccccc;
+              }
+            }
+          }
+          .bottom_submit_signup{
+            .submit1{
+              width: 100%;
+              height: 30px;
+              background: #5c87d9;
+              color: white;
+              outline: none;
+              border: none;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}

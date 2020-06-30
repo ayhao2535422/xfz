@@ -1,0 +1,97 @@
+@import "../common/init";
+@import "../common/constants";
+
+.header{
+  background: #3a3a3a;
+  width: 100%;
+  height: $header_height;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
+
+  .header_container{
+    width: $page_width;
+    margin: 0 auto;
+    overflow: hidden;
+
+    .logo_box{
+      width: 138px;
+      height: $header_height;
+      margin-top: 8px;
+      float: left;
+
+      a{
+        display: block;
+        width: 138px;
+        height: $header_height;
+        background: url("https://www.xfz.cn/static/build/images/logo.png")no-repeat;
+      }
+    }
+
+    .list_box{
+      float: left;
+      height: $header_height;
+      margin-left: 128px;
+
+      li{
+        float: left;
+        margin-right: 40px;
+        line-height: $header_height;
+        height: $header_height;
+        box-sizing: border-box;
+        &.active{
+          border-bottom: 5px solid $theme_color;
+        }
+
+        a{
+          color: white;
+        }
+      }
+    }
+
+    .author_box{
+      float: right;
+      height: $header_height;
+      line-height: $header_height;
+      .user_more_box{
+        background: #FFFFFF;
+        width: 140px;
+        //height: 90px;
+        position: absolute;
+        box-shadow: 0 3px 4px #cccccc;
+        border-radius: 5px;
+        top: 65px;
+        right: 30px;
+        font-size: 14px;
+        display: none;
+        .triangle{
+          border: solid transparent;
+          border-width: 10px;
+          border-bottom-color: #FFFFFF;
+          display: block;
+          width: 0;
+          height: 0;
+          margin-top: -20px;
+          margin-left: 60px;
+        }
+        a{
+          height: 44px;
+          text-align: center;
+          color: #6d85ac !important;
+          display: block;
+          line-height: 44px;
+        }
+      }
+
+      a{
+        color: white;
+      }
+
+      i{
+        color: white;
+      }
+    }
+  }
+}
